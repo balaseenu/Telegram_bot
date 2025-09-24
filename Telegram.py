@@ -5,11 +5,6 @@ from telegram.ext import Application, MessageHandler, filters
 import pandas as pd
 from tvDatafeed import TvDatafeed, Interval
 import nest_asyncio
-
-#set environment variable
-def set_environ():
-    os.environ['TOKEN'] = '8380163368:AAHq78IVBsKUAenRc_mrDtd-tcGpun_D9kM'
-    os.environ['CHAT_ID'] = '8451555149'
     
 def get_forex(text):
     check = text.split(' ')
@@ -38,7 +33,6 @@ async def echo(update, context):
 
 #main function starts here
 if __name__ == '__main__':
-    set_environ()
     TOKEN = os.getenv("TOKEN")
     CHAT_ID = os.getenv("CHAT_ID")
     nest_asyncio.apply()
