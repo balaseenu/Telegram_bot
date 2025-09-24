@@ -2,8 +2,8 @@ name: Run Python Script
 
 on:
   schedule:
-    - cron: "*/5 * * * *"   # every 5 minutes
-  workflow_dispatch:        # allows manual run
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
 
 jobs:
   run-script:
@@ -20,5 +20,8 @@ jobs:
         run: |
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Run script
+      - name: Run script with secrets
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
         run: python Telegram.py
