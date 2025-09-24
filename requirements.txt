@@ -1,4 +1,3 @@
-import os
 from telegram.ext import Application, MessageHandler, filters
 import pandas as pd
 from tvDatafeed import TvDatafeed, Interval
