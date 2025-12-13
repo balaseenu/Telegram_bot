@@ -1,4 +1,2 @@
-python-telegram-bot==22.3
-pandas
 git+https://github.com/rongardF/tvDatafeed.git
-nest_asyncio
+requests
